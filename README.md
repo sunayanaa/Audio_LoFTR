@@ -2,7 +2,7 @@
 
 This repository contains the official PyTorch implementation for the paper **"Robust and Explainable Audio Alignment via Audio LoFTR"**.
 
-Audio LoFTR++ introduces a detector-free Transformer architecture designed to align audio signals under severe forensic distortions (0dB Noise, Pitch Shifting, Time Stretching). By combining a **geometrically invariant Transformer backbone** with a high-resolution **Coarse-to-Fine Refinement** module, the system achieves state-of-the-art precision on complex polyphonic audio.
+Audio LoFTR introduces a detector-free Transformer architecture designed to align audio signals under severe forensic distortions (0dB Noise, Pitch Shifting, Time Stretching). By combining a **geometrically invariant Transformer backbone** with a high-resolution **Coarse-to-Fine Refinement** module, the system achieves state-of-the-art precision on complex polyphonic audio.
 
 ## 📂 File Structure
 
@@ -11,10 +11,10 @@ The project is organized into core model files, training scripts, and a comprehe
 ### Core Model & Training
 | File | Description |
 | :--- | :--- |
-| **`audio_loftr_refined_v2_6.py`** | **(Primary Model)** The definitive implementation of **Audio LoFTR++**. Contains the Transformer backbone and the Coarse-to-Fine Refinement module responsible for the 12.22ms MAE result. |
+| **`audio_loftr_refined_v2_6.py`** | **(Primary Model)** The definitive implementation of **Audio LoFTR**. Contains the Transformer backbone and the Coarse-to-Fine Refinement module responsible for the 12.22ms MAE result. |
 | **`AudioLoFTR-legacy.py`** | The original coarse-only model implementation. Retained for ablation studies to demonstrate the impact of the refinement stage. |
 | **`train_audioloftr.py`** | The main training script. Designed for use with the TASLPRO Jazz Dataset, handling data loading, augmentation, and GPU-accelerated training. |
-| **`visualize_results.py`** | **(Reproduces Figure 1)** Generates qualitative visualizations comparing Audio LoFTR++ attention corridors against MFCC baselines. |
+| **`visualize_results.py`** | **(Reproduces Figure 1)** Generates qualitative visualizations comparing Audio LoFTR attention corridors against MFCC baselines. |
 
 ### Comparative Benchmarks & Ablation
 These scripts reproduce the comparative results and architectural ablation studies presented in the "Results and Discussion" section.
@@ -35,7 +35,7 @@ Our final evaluation on real Jazz recordings demonstrates the significant precis
 | Method | MAE (ms) | Robustness to Pitch/Noise |
 | :--- | :--- | :--- |
 | MFCC + DTW (Industry Standard) | 22.63 ms | Low |
-| **Audio LoFTR++ (Ours)** | **12.22 ms** | **High** |
+| **Audio LoFTR (Ours)** | **12.22 ms** | **High** |
 
 ## 🛠️ Requirements
 
